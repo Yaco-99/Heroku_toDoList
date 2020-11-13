@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['submit'])){
-        $str = filter_var($_POST['task'], FILTER_SANITIZE_STRING | FILTER_SANITIZE_EMAIL);
+        $str = filter_var($_POST['task'], FILTER_SANITIZE_STRING | FILTER_SANITIZE_MAGIC_QUOTES);
         $str = str_replace(array("\n","\r"),' ',$str);
         $file= '../data/task.json';
         $current = file_get_contents($file);
